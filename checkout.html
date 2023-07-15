@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="CO.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://png.pngtree.com/png-vector/20220905/ourmid/pngtree-vektor-tugu-jogja-0km-png-image_6136672.png" alt="Logo">
+        <h1>Formulir Checkout</h1>
+      </div>
+      <ul class="nav-menu">
+        <button class="produk-button" onclick="resetData(), onclick=location.href='E-Commerce UMKM.html'">Kembali ke Produk</button>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="checkout">
+      <div class="container">
+
+        <form class="checkout-form" onsubmit="return calculateTotal()">
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="address">Alamat</label>
+            <textarea id="address" name="address" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="phone">Nomor Telepon</label>
+            <input type="tel" id="phone" name="phone" required>
+          </div>
+          <div class="form-group">
+            <label for="notes">Catatan Pembelian</label>
+            <textarea placeholder="Barang, Type, Size...." name="notes" rows="4" required></textarea>
+          </div>
+          <div class="form-group">
+            <label for="shipping">Metode Pengiriman</label>
+            <select id="shipping" name="shipping" required>
+              <option value="Diantar sesuai Alamat">Diantar sesuai Alamat</option>
+              <option value="Ambil di Toko">Ambil di Toko</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="bank">Transfer ke Bank</label>
+            <select id="bank" name="bank" required>
+              <option value="Bank Bri A/n UMKMYOGYA 806207007698338">Bank Bri A/n UMKMYOGYA 806207007698338</option>
+              <option value="Bank Bni A/n UMKMYOGYA 2123782021">Bank Bni A/n UMKMYOGYA 2123782021</option>
+              <option value="Dana A/n UMKMYOGYA 081212212221">Dana A/n UMKMYOGYA 081212212221</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="total-price">Total Harga</label>
+            <input type="text" id="total-price" name="total-price" readonly>
+          </div>
+
+          <div class="form-group">
+            <label for="payment-proof">Unggah Bukti Pembayaran</label>
+            <input type="file" id="payment-proof" name="payment-proof" accept="image/*" required>
+          </div>
+          <button class="checkout-button" type="submit" onclick="kirimData()">Checkout Sekarang</button>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Toko Online UMKM. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Retrieve the total price from session storage
+    var totalHarga = sessionStorage.getItem('totalPrice');
+
+    // Update the total price input field
+    var totalPriceInput = document.getElementById('total-price');
+    totalPriceInput.value = totalHarga ? 'Rp ' + formatHarga(parseFloat(totalHarga)) : '';
+
+    // Function to format the price with thousands separator
+    function formatHarga(harga) {
+      return harga.toLocaleString('id-ID');
+    }
+
+    function kirimData() {
+      var Nama = document.getElementById("name").value;
+      var Email = document.getElementById("email").value;
+      var Alamat = document.getElementById("address").value;
+      var NomorTelepon = document.getElementById("phone").value;
+      var CatatanPembelian = document.getElementsByName("notes")[0].value;
+      var MetodePengiriman = document.getElementById("shipping").value;
+      var TransferBank = document.getElementById("bank").value;
+      var TotalHarga = document.getElementById("total-price").value;
+      var BuktiPembayaran = document.getElementById("payment-proof").value;
+
+      var hasil = "Data telah dikirim:\n\n" +
+        "Nama: " + Nama + "\n" +
+        "Email: " + Email + "\n" +
+        "Alamat: " + Alamat + "\n" +
+        "Nomor Telepon: " + NomorTelepon + "\n" +
+        "Catatan Pembelian: " + CatatanPembelian + "\n" +
+        "Metode Pengiriman: " + MetodePengiriman + "\n" +
+        "Transfer ke Bank: " + TransferBank + "\n" +
+        "Total Harga: " + TotalHarga + "\n" +
+        "Bukti Pembayaran: " + BuktiPembayaran + "\n";
+
+      alert(hasil);
+    }
+
+    function resetData() {
+      sessionStorage.removeItem('totalPrice');
+      document.getElementById("total-price").value = '';
+    }
+  </script>
+  </form>
+</body>
+
+</html>

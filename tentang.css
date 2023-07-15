@@ -1,0 +1,77 @@
+/* Reset default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Set background color and text color */
+body {
+  background-color: #ffffff;
+  color: #333;
+  font-family: Arial, sans-serif;
+}
+
+/* Header */
+header {
+  background-color: #DC143C;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.logo h1 {
+  color: #fff;
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 10px;
+}
+
+/* Main content section */
+main {
+  padding: 20px;
+}
+
+.tentang-kami {
+  margin-bottom: 20px;
+}
+
+.tentang-kami h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.tentang-kami p {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.produk-button {
+  background-color:#DC143C;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <link rel="stylesheet" href="payment.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pembayaran</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@zxing/library@0.17.1/umd/index@3.0.1"></script>
+  <script>
+    // Function to handle barcode scanning
+    function scanBarcode() {
+      const codeReader = new ZXing.BrowserBarcodeReader();
+      codeReader
+        .decodeOnceFromVideoDevice(undefined, 'video')
+        .then((result) => {
+          // Set the scanned barcode value to the card number input field
+          const cardInput = document.getElementById('card');
+          cardInput.value = result.text;
+        })
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  </script>
+</head>
+
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <img src="https://png.pngtree.com/png-vector/20220905/ourmid/pngtree-vektor-tugu-jogja-0km-png-image_6136672.png" alt="Logo">
+        <h1>Toko Online UMKM</h1>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="#">Produk</a></li>
+        <li><a href="#">Tentang Kami</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="pembayaran">
+      <div class="container">
+        <h2>Pembayaran</h2>
+        <form class="pembayaran-form">
+          <div class="form-group">
+            <label for="name">Nama Lengkap</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+          <div class="form-group">
+            <label for="card">Nomor Kartu</label>
+            <input type="text" id="card" name="card" required>
+            <button type="button" onclick="scanBarcode()">Scan Barcode</button>
+          </div>
+          <div class="form-group">
+            <label for="exp-date">Tanggal Kadaluarsa</label>
+            <input type="text" id="exp-date" name="exp-date" required>
+          </div>
+          <div class="form-group">
+            <label for="cvv">CVV</label>
+            <input type="text" id="cvv" name="cvv" required>
+          </div>
+          <div class="form-group">
+            <label for="bank">Pilih Bank</label>
+            <select id="bank" name="bank">
+              <option value="bank-a">Bank A</option>
+              <option value="bank-b">Bank B</option>
+              <option value="bank-c">Bank C</option>
+            </select>
+          </div>
+          <button class="pembayaran-button">Bayar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <div class="container">
+      <p>&copy; 2023 Toko Online UMKM. All rights reserved.</p>
+    </div>
+  </footer>
+</body>
+
+</html>

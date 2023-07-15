@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toko Online</title>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <img src="https://png.pngtree.com/png-vector/20220905/ourmid/pngtree-vektor-tugu-jogja-0km-png-image_6136672.png" alt="Logo">
+                <h1>Toko Online UMKM Yogyakarta</h1>
+            </div>
+            <ul class="nav-menu">
+                <button class="tentang-button" onclick="location.href='tentang-Kami.html'">Tentang Kami</button>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="produk">
+            <div class="container">
+                <h2>Produk Terbaru</h2>
+                <div class="produk-grid">
+                    <div class="produk-item">
+                        <img src="https://s1.bukalapak.com/img/60724914871/large/data.jpeg" alt="Produk 1">
+                        <h3>Kemeja Batik Couple</h3>
+                        <p class="produk-harga" data-harga="160000">Rp 160.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://cf.shopee.co.id/file/347812b3860a55ee7059a9259a16c4b4" alt="Produk 2">
+                        <h3>Kaos Jogja</h3>
+                        <p class="produk-harga" data-harga="35000">Rp 35.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://images.tokopedia.net/img/cache/700/product-1/2019/9/1/26358830/26358830_bd0c6276-ce36-491b-9ab7-7a0296a5c9b7_1280_1280" alt="Produk 3">
+                        <h3>Kemeja Batik</h3>
+                        <p class="produk-harga" data-harga="75000">Rp 75.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://batikunik.com/userfiles/uploads/celana-batik-panjang-95161-3.jpg" alt="Produk 4">
+                        <h3>Celana Batik</h3>
+                        <p class="produk-harga" data-harga="40000">Rp 40.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2021/1/2/717c2ef3-ec4d-476b-a9b8-c02d2e47d4e5.jpg" alt="Produk 5">
+                        <h3>Blangkon Jogja</h3>
+                        <p class="produk-harga" data-harga="50000">Rp 50.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://cf.shopee.co.id/file/d1dc2e6bd95c14ad0763082cc0006ffc" alt="Produk 6">
+                        <h3>Kalung Etnik</h3>
+                        <p class="produk-harga" data-harga="10000">Rp 10.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://images.tokopedia.net/img/cache/700/product-1/2019/9/5/2591520/2591520_9706cb4c-d811-4275-a880-04441fc1e3f3_1280_1280.jpg" alt="Produk 7">
+                        <h3>Gelang Kain</h3>
+                        <p class="produk-harga" data-harga="5000">Rp 5.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://img.priceza.co.id/img1/2130004/0001/2130004-20211019180108-67958404037050075.jpg" alt="Produk 8">
+                        <h3>Sandal Jogja</h3>
+                        <p class="produk-harga" data-harga="25000">Rp 25.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://s3.wasabisys.com/agendaindonesia/2019/07/bakpia-pathok-25.jpg" alt="Produk 9">
+                        <h3>Bakpia Pathok</h3>
+                        <p class="produk-harga" data-harga="25000">Rp 25.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://images.tokopedia.net/img/cache/500-square/VqbcmM/2022/10/23/30ef3885-664e-4a2a-bbf9-027088743487.jpg" alt="Produk 10">
+                        <h3>Gudeg Kaleng</h3>
+                        <p class="produk-harga" data-harga="35000">Rp 35.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://www.static-src.com/wcsstore/Indraprastha/images/catalog/full//103/MTA-39738008/bakpia_kencana_wingko_babat_kencana_by_bakpia_kencana_isi_20_full03_1e53bd23.jpg" alt="Produk 11">
+                        <h3>Wingko Babat</h3>
+                        <p class="produk-harga" data-harga="20000">Rp 20.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+
+                    <div class="produk-item">
+                        <img src="https://joss.co.id/data/uploads/2019/05/belalang-goreng.jpg" alt="Produk 12">
+                        <h3>Walang Goreng</h3>
+                        <p class="produk-harga" data-harga="25000">Rp 25.000</p>
+                        <div class="jumlah-container">
+                            <button class="jumlah-button" onclick="kurangiJumlah(this)">-</button>
+                            <input type="number" class="jumlah-input" value="0">
+                            <button class="jumlah-button" onclick="tambahJumlah(this)">+</button>
+                        </div>
+                        <button class="produk-beli" onclick="location.href='checkout.html'">Beli</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Toko Online UMKM. All rights reserved.</p>
+        </div>
+    </footer>
+   
+   <script>
+
+function kurangiJumlah(button) {
+  var input = button.nextElementSibling;
+  var value = parseInt(input.value);
+  
+  if (value > 1) {
+    input.value = value - 1;
+    updateHargaTotal(button, value - 1);
+  }
+}
+
+function tambahJumlah(button) {
+  var input = button.previousElementSibling;
+  var value = parseInt(input.value);
+  input.value = value + 1;
+  updateHargaTotal(button, value + 1);
+}
+
+function updateHargaTotal(button, jumlah) {
+  var produkItem = button.closest('.produk-item');
+  var hargaElement = produkItem.querySelector('.produk-harga');
+  var harga = hargaElement.dataset.harga; // Mengambil harga awal dari atribut data-harga
+  var hargaPerItem = parseInt(harga);
+  var hargaTotal = hargaPerItem * jumlah;
+
+  // Update the displayed harga with proper formatting
+  hargaElement.innerText = 'Rp ' + formatHarga(hargaTotal);
+
+  // Update the total price in session storage
+  var totalHarga = sessionStorage.getItem('totalPrice');
+  totalHarga = totalHarga ? parseFloat(totalHarga) : 0;
+
+  // Adjust the total price based on the item's price and quantity change
+  var priceChange = hargaTotal - (hargaPerItem * (jumlah - 1));
+  totalHarga += priceChange;
+
+  sessionStorage.setItem('totalPrice', totalHarga.toFixed(2));
+
+  // Update the total price input field on the checkout page
+  var totalPriceInput = document.getElementById('total-price');
+  totalPriceInput.value = 'Rp ' + formatHarga(totalHarga);
+}
+
+
+function formatHarga(harga) {
+    return harga.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+    
+}
+
+    </script>
+</body>
+
+</html>
